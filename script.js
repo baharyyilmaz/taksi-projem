@@ -28,16 +28,9 @@ function whatsappFiyatAl() {
     }
 
     const telefon = "905405543534";
-
-    const mesaj = `Merhaba, taksi fiyat bilgisi almak istiyorum.
-
-Kalkış yeri: ${bilgiler.kalkis}
-Varış yeri: ${bilgiler.varis}
-
-Güncel fiyat bilgisi alabilir miyim?`;
+    const mesaj = `Merhaba, taksi fiyat bilgisi almak istiyorum.\n\nKalkış yeri: ${bilgiler.kalkis}\nVarış yeri: ${bilgiler.varis}\n\nGüncel fiyat bilgisi alabilir miyim?`;
 
     const whatsappLink = `https://wa.me/${telefon}?text=${encodeURIComponent(mesaj)}`;
-
     window.location.href = whatsappLink;
 }
 
@@ -48,7 +41,8 @@ function haritadaRotaGor() {
         return;
     }
 
+    // Google Maps Yönlendirmesi (Düzeltildi)
     const mapsLink = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(bilgiler.kalkis)}&destination=${encodeURIComponent(bilgiler.varis)}&travelmode=driving`;
 
-    window.location.href = mapsLink;
+    window.open(mapsLink, '_blank'); // Haritayı yeni sekmede açmak daha kullanıcı dostudur
 }
